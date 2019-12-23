@@ -10,6 +10,8 @@ pygmentsUseClasses = true
 theme = ["ctmartin"]
 title = "Christian Martin's Photos"
 
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
 [Authors.ctmartin]
   given_name = "Christian"
   family_name = "Martin"
