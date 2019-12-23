@@ -1,0 +1,7 @@
+{{ define "main" }}
+    {{ if eq .Kind "taxonomyTerm" }}
+        {{ partial "list-taxonomy-terms.html" . }}
+    {{ else }}
+        {{ partial "list-albums.html" . }}
+    {{ end }}
+{{ end }}

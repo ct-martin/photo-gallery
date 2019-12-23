@@ -1,0 +1,67 @@
+baseURL = "https://gallery.ctmartin.me/"
+copyright = "© 2019 Christian Martin"
+disableHugoGeneratorInject = true
+languageCode = "en-us"
+paginatePath = ""
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+#pygmentsOptions = "linenos=true"
+pygmentsUseClasses = true
+theme = ["ctmartin"]
+title = "Christian Martin's Photos"
+
+[Authors.ctmartin]
+  given_name = "Christian"
+  family_name = "Martin"
+  display_name = "Christian Martin"
+[Authors.ctmartin.social]
+    website = "https://ctmartin.dev/"
+    github = "ct-martin"
+    twitter = "_ctmartin"
+
+[blackfriday]
+  fractions = false
+
+[[menu.main]]
+    name = "Albums"
+    idenfifier = "albums"
+    url = "/"
+    weight = 10
+#[[menu.main]]
+#    name = "Tags"
+#    idenfifier = "tags"
+#    url = "/tags"
+#    weight = 11
+[[menu.main]]
+    name = "Portfolio"
+    idenfifier = "portfolio"
+    url = "https://ctmartin.dev/"
+    weight = 20
+[[menu.main]]
+    name = "Blog"
+    idenfifier = "Blog"
+    url = "https://blog.ctmartin.me/"
+    weight = 25
+[[menu.main]]
+    name = "About"
+    idenfifier = "about"
+    url = "https://ctmartin.dev/about"
+    weight = 30
+
+[outputs]
+  #home = ["HTML", "AMP", "RSS"]
+  #page = ["HTML", "AMP"]
+  home = ["HTML"]
+  page = ["HTML"]
+
+[params]
+  author = "Christian Martin"
+  authorLinks = ["https://ctmartin.dev/", "https://blog.ctmartin.me/", "https://github.com/ct-martin", "https://gitlab.com/ctmartin", "https://twitter.com/_ctmartin"]
+  description = "Christian Martin's Photos"
+  sourceurl = "https://github.com/ct-martin/photo-gallery/"
+
+#[permalinks]
+#  blog = "/:year/:month/:filename/"
+
+[Social]
+  twitter = "_ctmartin"

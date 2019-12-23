@@ -1,0 +1,12 @@
+{{ with .Param "related" }}
+    <aside>
+        <div class="container">
+                <h1>Related Content</h1>
+                {{ range . }}
+                    {{ with $.Site.GetPage . }}
+                        {{ partial "list-item-article" . }}
+                    {{ end }}
+                {{ end }}
+        </div>
+    </aside>
+{{ end }}

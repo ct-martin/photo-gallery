@@ -1,0 +1,11 @@
+<article class="article-list">
+    <a href="{{.Page.Permalink}}">
+        <h2>{{.Page.Title}}</h2>
+        <p>
+            {{- .Page.Summary | plainify | safeHTML -}}
+        </p>
+        <p>
+            ({{ .Count }} articles)
+        </p>
+    </a>
+</article>

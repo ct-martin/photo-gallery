@@ -1,0 +1,25 @@
+<meta name="robots" content="follow, index" />
+
+<!-- Meta -->
+<meta name="application-name" content="{{ .Site.Title }}" />
+<meta name="author" content="{{ .Site.Params.Author }}" />
+<meta name="creator" content="{{ .Site.Params.Author }}" />
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+{{ .Site.Hugo.Generator }}
+<meta name="publisher" content="{{ .Site.Params.Author }}" />
+<!--
+    OpenGraph
+    Internal template does date, pubdate, lastmod, images, audio, videos
+    https://gohugo.io/templates/internal#configure-open-graph
+-->
+{{- template "_internal/opengraph.html" . -}}
+
+<!-- Twitter -->
+{{- template "_internal/twitter_cards.html" . -}}
+
+<!-- Schema.org -->
+{{- template "_internal/schema.html" . -}}
+{{- partial "seo-jsonld.html" . -}}
+
+<!-- Google News (Keywords) -->
+{{- template "_internal/google_news.html" . -}}
