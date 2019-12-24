@@ -1,0 +1,32 @@
+# Original under MIT License: https://gitlab.com/pages/hugo/blob/master/LICENSE
+# All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
+# Modifications:
+# - Hugo "Extended" image
+# - Cloudflare cache purging via stage
+# - Disable testing (for now) since only using master
+image: registry.gitlab.com/pages/hugo/hugo_extended:latest
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+stages:
+#  - test
+  - build
+
+#test:
+#  stage: test
+#  script:
+#    - hugo
+#  except:
+#    - master
+
+pages:
+  stage: build
+  script:
+    - hugo
+    - "apk add curl && curl -X POST \"https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE/purge_cache\" -H \"Authorization: Bearer $CLOUDFLARE_API_KEY\" -H \"Content-Type: application/json\" --data '{\"purge_everything\":true}' || echo 'WARN: FAILED TO PURGE CACHE'"
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
