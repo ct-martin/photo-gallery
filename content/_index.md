@@ -1,3 +1,4 @@
 ---
-title: All Albums
+title: Albums
+type: album
 ---

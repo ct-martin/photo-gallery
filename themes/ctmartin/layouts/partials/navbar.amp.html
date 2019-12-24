@@ -1,0 +1,18 @@
+<amp-state id="navState">
+    <script type="application/json">
+        false
+    </script>
+</amp-state>
+
+<nav id="navbar" class="container" [class]="navState ? 'container active' : 'container'">
+    <a class="nav-brand" href="/">{{ .Site.Title }}</a>
+    <div class="nav-links">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+    </div>
+    <div class="nav-toggle-wrapper">
+        <a class="nav-toggle" on="tap:AMP.setState({ navState: !navState })"></a>
+    </div>
+</nav>

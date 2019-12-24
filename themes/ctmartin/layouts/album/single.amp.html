@@ -1,0 +1,9 @@
+{{ define "main" }}
+    {{ partial "page-album.amp.html" . }}
+{{ end }}
+{{ define "aside" }}
+    {{ partial "page-related" . }}
+{{ end }}
+{{ define "pageHead" }}
+    <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
+{{ end }}

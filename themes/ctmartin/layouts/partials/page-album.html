@@ -1,0 +1,24 @@
+<article>
+    <h1>{{.Title}}</h1>
+    {{ .Content }}
+
+    <div id="lightgallery" class="album-image-previews">
+        {{ $resources := .Resources.ByType "image" }}
+        {{ range $i, $img := $resources }}
+            <a href="{{ $img.RelPermalink }}">
+                <img src="{{ .RelPermalink }}" />
+            </a>
+        {{ end }}
+    </div>
+
+    <script type="text/javascript">
+    // https://sachinchoolur.github.io/lightgallery.js/docs/
+
+    const options = {
+        speed: 300,
+        progressBar: false
+    };
+
+    lightGallery(document.getElementById('lightgallery'), options); 
+    </script>
+</article>

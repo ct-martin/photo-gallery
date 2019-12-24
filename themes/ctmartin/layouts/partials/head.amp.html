@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<title>{{ .Title }} | {{ .Site.Title }}</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+{{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+<link rel="sitemap" href="/sitemap.xml" type="application/xml" />
+
+{{ partial "seo.html" . }}
+
+<!-- <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,400i,700,700i|Merriweather:400,400i,700,700i,800|Source+Code+Pro:400,600&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700|Merriweather:400,400i,700,700i|Source+Code+Pro:400&display=swap" rel="stylesheet">
+{{ $options := (dict "outputStyle" "compressed") }}
+{{ with resources.Get "css/main.scss" | resources.ToCSS $options | resources.Minify }}
+    <style amp-custom>
+    {{ .Content | safeCSS }}
+    </style>
+{{ end }}
+
+<!-- AMP -->
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>

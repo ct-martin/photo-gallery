@@ -1,0 +1,14 @@
+<figure class="amp-figure">
+    <div class="amp-img-container">
+        <amp-img src="{{ .Get "src" }}"
+            layout="fill">
+            <noscript>
+                <img src="{{ .Get "src" }}" />
+            </noscript>
+        </amp-img>
+    </div>
+    <figcaption>
+        <p>{{ .Get "caption" }}</p>
+        <a href="{{ .Get "attrlink" }}" target="_blank">{{ .Get "attr" }}</a>
+    </figcaption>
+</figure>

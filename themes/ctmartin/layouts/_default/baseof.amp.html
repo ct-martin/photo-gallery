@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html amp lang="{{ .Site.LanguageCode }}">
     <head>
-        {{- partial "head.html" . -}}
+        {{- partial "head.amp.html" . -}}
         {{- block "pageHead" . }}{{- end }}
     </head>
     <body>
-        {{- partial "header.html" . -}}
+        {{- partial "header.amp.html" . -}}
         <main class="container">
             {{- block "main" . }}{{- end }}
         </main>
-        {{- block "aside" . }}{{- end }}
         {{- partial "footer.html" . -}}
     </body>
 </html>
