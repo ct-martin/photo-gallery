@@ -62,7 +62,7 @@ nav {
 }
 
 // List link blocks
-.article-list > a {
+.article-list > a, a.list-link {
     color: $font-color;
     display: block;
     margin-bottom: 1.6em;
@@ -219,5 +219,22 @@ figure {
             height: 250px;
             object-fit: contain;
         }
+    }
+}
+.list-album-previews {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: stretch;
+
+    margin: 1em 0;
+    padding: 0;
+
+    div, a {
+        flex: 0 0 auto;
+        margin: 0.5em;
+        max-width: 250px;
+        width: initial;
     }
 }

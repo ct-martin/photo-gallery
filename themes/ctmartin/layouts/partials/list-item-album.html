@@ -1,12 +1,12 @@
-<div>
+{{ $albumurl := .Permalink }}
+<a class="list-link" href="{{ $albumurl }}">
     <h2>{{ .Title }}</h2>
-    {{ $albumurl := .Permalink }}
     {{ $img := first 1 (.Resources.ByType "image") }}
     {{ range $img }}
         {{ with .Fill "250x250" }}
-            <a href="{{ $albumurl }}"><img src="{{ .RelPermalink }}" /></a>
+            <img src="{{ .RelPermalink }}" />
         {{ else }}
             <p>:(</p>
         {{ end }}
     {{ end }}
-</div>
+</a>

@@ -1,9 +1,11 @@
 <h1>{{.Title}}</h1>
 {{ .Content }}
-{{ $filedir := "/album/" }}
-{{ range (readDir (printf "/content/%s" $filedir)) }}
-    {{ $file := printf "%s%s" $filedir .Name }}
-    {{ with $.Site.GetPage $file }}
-        {{ partial "list-item-album.html" . }}
+<div class="list-album-previews">
+    {{ $filedir := "/album/" }}
+    {{ range (readDir (printf "/content/%s" $filedir)) }}
+        {{ $file := printf "%s%s" $filedir .Name }}
+        {{ with $.Site.GetPage $file }}
+            {{ partial "list-item-album.html" . }}
+        {{ end }}
     {{ end }}
-{{ end }}
+</div>
