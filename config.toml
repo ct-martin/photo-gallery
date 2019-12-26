@@ -1,4 +1,4 @@
-baseURL = "https://gallery.ctmartin.me/"
+baseURL = "https://pix.ctmartin.me/"
 copyright = "© 2019 Christian Martin"
 disableHugoGeneratorInject = true
 languageCode = "en-us"
