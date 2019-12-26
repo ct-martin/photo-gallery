@@ -203,20 +203,21 @@ figure {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: left;
-    align-items: stretch;
+    justify-content: space-between;
 
     margin: 1em 0;
 
     div, a, amp-img {
         cursor: pointer;
         flex: 0 0 auto;
-        margin: 0;
-        max-height: 250px;
+        margin: 5px 2px;
+        max-width: 100%;
         padding: 0;
 
         img {
-            height: 250px;
+            display: block;
+            max-height: 210px;
+            max-width: 100%;
             object-fit: contain;
         }
     }
