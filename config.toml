@@ -3,10 +3,6 @@ copyright = "© 2019 Christian Martin"
 disableHugoGeneratorInject = true
 languageCode = "en-us"
 paginatePath = ""
-pygmentsCodeFences = true
-pygmentsCodeFencesGuessSyntax = true
-#pygmentsOptions = "linenos=true"
-pygmentsUseClasses = true
 theme = ["ctmartin"]
 title = "Christian Martin's Photos"
 
@@ -21,8 +17,11 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     github = "ct-martin"
     twitter = "_ctmartin"
 
-[blackfriday]
-  fractions = false
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    noClasses = false
 
 [[menu.main]]
     name = "Albums"
