@@ -1,11 +1,8 @@
 <h1>{{.Title}}</h1>
 {{ .Content }}
 <div class="list-album-previews">
-    {{ $filedir := "/album/" }}
-    {{ range (readDir (printf "/content/%s" $filedir)) }}
-        {{ $file := printf "%s%s" $filedir .Name }}
-        {{ with $.Site.GetPage $file }}
-            {{ partial "list-item-album.html" . }}
-        {{ end }}
+    {{ range .Paginator.Pages }}
+        {{ partial "list-item-album.html" . }}
     {{ end }}
 </div>
+{{ template "_internal/pagination.html" . }}
