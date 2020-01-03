@@ -1,6 +1,7 @@
 <meta charset="utf-8" />
 <title>{{ .Title }} | {{ .Site.Title }}</title>
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+<link rel="icon" href="/icon.png" />
 
 {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
