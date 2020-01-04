@@ -1,7 +1,0 @@
-{{ define "main" }}
-    {{ if eq .Kind "taxonomyTerm" }}
-        {{ partial "list-taxonomy-terms.html" . }}
-    {{ else }}
-        {{ partial "list-articles.html" . }}
-    {{ end }}
-{{ end }}

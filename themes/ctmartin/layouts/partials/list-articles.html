@@ -1,6 +1,0 @@
-<h1>{{.Title}}</h1>
-{{ .Content }}
-{{ range .Paginator.Pages }}
-    {{ partial "list-item-article.html" . }}
-{{ end }}
-{{ template "_internal/pagination.html" . }}

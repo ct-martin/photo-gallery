@@ -1,8 +1,0 @@
-<h1>{{.Title}}</h1>
-{{ .Content }}
-<div class="list-album-previews">
-    {{ range .Paginator.Pages }}
-        {{ partial "list-item-album.html" . }}
-    {{ end }}
-</div>
-{{ template "_internal/pagination.html" . }}

@@ -1,5 +1,0 @@
-<script type="application/ld+json">
-{{- $ld := dict "@context" "http://schema.org" "@type" "Blog" "about" .Site.Params.description "author" (dict "@type" "Person" "name" .Site.Params.Author "url" .Site.Params.AuthorLinks) "publisher" (dict "@type" "Person" "name" .Site.Params.Author "url" .Site.Params.AuthorLinks) "name" .Site.Title "url" .Permalink}}
-{{- $ld := merge $ld (cond (eq .Kind "page") (dict "blogPost" (dict  "@type" "BlogPosting" "name" .Title "headline" .Title "about" (.Summary | plainify | htmlUnescape) "author" (dict "@type" "Person" "name" .Site.Params.Author "url" .Site.Params.AuthorLinks) "publisher" (dict "@type" "Person" "name" .Site.Params.Author "url" .Site.Params.AuthorLinks) "datePublished" (.Date.Format "2006-01-02"))) dict) }}
-{{ $ld | jsonify | safeJS }}
-</script>
