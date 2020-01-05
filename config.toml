@@ -1,5 +1,5 @@
 baseURL = "https://pix.ctmartin.me/"
-copyright = "© 2019 Christian Martin"
+copyright = "© 2020 Christian Martin"
 disableHugoGeneratorInject = true
 languageCode = "en-us"
 paginatePath = ""
