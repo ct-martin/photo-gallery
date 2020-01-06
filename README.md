@@ -2,7 +2,17 @@ CTMartin's Photos
 ===============
 [![pipeline status](https://gitlab.com/ctmartin/photo-gallery/badges/master/pipeline.svg)](https://gitlab.com/ctmartin/photo-gallery/commits/master)
 
+This site is for showing photos I've taken.
 
+Built using:
+* [Hugo](https://gohugo.io/)
+* [Custom Hugo Theme](https://github.com/ct-martin/ctmartin-hugo-theme)
+  * Supports [AMP](https://amp.dev/) (inc. for galleries)
+  * [Lightgallery](https://sachinchoolur.github.io/lightgallery.js/) for non-AMP galleries
+* [Cloudflare](https://www.cloudflare.com/) for DNS & edge proxy
+* [GitLab Pages](https://docs.gitlab.com/ce/user/project/pages/)
+
+**!!! NOTE: GitLab CI has a [100MB limit](https://docs.gitlab.com/ee/administration/pages/index.html#set-maximum-pages-size) on site size - this needs to be watched carefully since images take up space fast.**
 
 ---
 
