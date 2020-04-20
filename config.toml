@@ -50,7 +50,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     weight = 30
 
 [outputs]
-  home = ["HTML", "AMP", "RSS"]
+  home = ["HTML", "AMP", "RSS", "JSON"]
   page = ["HTML", "AMP"]
 
 [params]
